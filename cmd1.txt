@@ -1,0 +1,118 @@
+1. Create a repository
+
+$ git init
+
+2. Make some changes -- add some files, change content of some files
+
+$ touch index.html about.html
+// Made changes in file
+$ git status
+$ git add -A
+
+
+3. commit changes
+
+$ git commit -m "First commit"
+
+4. repeat steps 1-3 for 2 more times. try to remove and ignore some files . Use git diff before each commit.
+
+$ touch contact.html
+//made changes in file
+$ git status
+$ git add -A
+$ git commit -m "Contacts.html updated"
+
+
+$touch .gitignore
+$touch logs.txt
+//placed logs.txt in .gitignore
+
+
+//made changes in index.html
+$git diff
+
+
+
+
+5. create changes and revert those changes using git when those changes are not added to staging are
+
+$git checkout index.html
+
+
+6. create changes and revert those changes after adding changes to staging area
+
+$git restore --staged
+
+7. create change and revert those changes after committing those changes .
+$git revert <commit hash>
+
+8. Check repository status before adding changes to staging area, after adding changes to staging area and after committing changes .
+
+$git status
+
+9. Display all the commits .
+$git log --online
+
+10. Display a specific commit .
+$git show <commit hash>
+
+11. create branches called "feature1" and "feature2" from master. 11 . Delete branch "feature2".
+
+$git branch feature1
+$git branch feature2
+$git branch -d feature2
+
+12. Make some commits on "feature1".
+$ git checkout feature1
+//made changes to contact.html
+$git status
+$ git commit -am "phone number added"
+
+
+13. Make some commits on branch "master".
+$git checkout master
+//made changes to contact.html
+$ git commit -am "email added"
+
+14. merge branch "feature1" in "master" (make some conflicts by changing same file on same line in both the branches) 15.create branch "feature2" from master .
+
+$git merge feature1
+
+conflict error:
+CONFLICT (content): Merge conflict in contact.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+15. Make some commits on "feature2".
+
+$ git checkout -b feature2
+//made changes to index.html
+$git commit -am "index.html updated in feature2"
+
+16. Make some commits on branch "master".
+$ git switch master
+//made changes to index.html
+$git commit -am "index.html updated in master"
+
+17. rebase branch "master" in "feature2" (make some conflicts by changing same file on same line in both the branches) .
+$ git rebase master
+
+conflict error:
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+
+18. find the differences between "merge" and "rebase" in above cases.
+
+19. Use git stash
+$git stash
+$git stash apply
+
+20. create a repository on github for your working repository and push changes on remote repository.
+$ git add remote origin https://github.com/Ratchet-prog/vinsol_ex1.git
+$ git push origin master
+
+$ git switch feature1
+$ git push origin feature1
+
+$ git switch feature2
+$ git push origin feature2
