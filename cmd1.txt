@@ -102,6 +102,7 @@ Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 
 18. find the differences between "merge" and "rebase" in above cases.
+merge allows us to merge different branches hence history is preserved where as rebase integrates the brances hence cleaner history but actual history of branch is lost.
 
 19. Use git stash
 $git stash
