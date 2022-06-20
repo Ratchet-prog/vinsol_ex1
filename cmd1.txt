@@ -82,6 +82,8 @@ conflict error:
 CONFLICT (content): Merge conflict in contact.html
 Automatic merge failed; fix conflicts and then commit the result.
 
+$git status
+$git commit -am "Conflict resolved"
 
 15. Make some commits on "feature2".
 
@@ -100,6 +102,10 @@ $ git rebase master
 conflict error:
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
+
+$git status
+$git commit -am "rebase Conflict resolved"
+$git rebase --continue
 
 18. find the differences between "merge" and "rebase" in above cases.
 merge allows us to merge different branches hence history is preserved where as rebase integrates the brances hence cleaner history but actual history of branch is lost.
